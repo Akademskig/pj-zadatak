@@ -30,6 +30,7 @@
   ],
   "devDependencies": {
     "less": "^3.9.0",
-    "less-watch-compiler": "^1.13.0"
+    "less-watch-compiler": "^1.13.0",
+    "serve": "^10.1.2"
   }
 }
