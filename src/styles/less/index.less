@@ -30,13 +30,15 @@ body {
 
 .menu {
     background-color: @theme-dark;
-    width: @menu-width-lg;
-    position: fixed;
     top: 0;
+    width: @menu-width-lg;
     bottom: 0;
+    position: fixed;
+    height: 100%;
+    z-index: 5;
     .composeBtnContainer {
         text-align: center;
-        margin-top: 35px;
+        padding-top: 35px;
         .composeBtn {
             padding: 9px 15px;
             margin: 10px;
@@ -46,20 +48,36 @@ body {
     }
 }
 
+.mainView {
+    display: grid;
+    grid-template-columns: @menu-width-lg auto;
+}
+
 .mobileMenu {
     display: none;
     background-color: @theme-dark;
+    height: 40px;
     width: 100%;
-    height: 50px;
     position: fixed;
     top: 0;
-    .composeBtnContainer {
-        display: inline-block;
-        .composeBtn {
-            padding: 7px 13px;
-            margin: 8px;
-            border-radius: 23px;
-            font: 18px @font;
+    right: 0;
+    z-index: 1;
+    .menuBtn {
+        background-color: @theme-dark;
+        margin: 2px;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            color: whitesmoke;
+        }
+        float: right;
+        div {
+            background-color: whitesmoke;
+            margin: 6px 0;
+            width: 30px;
+            height: 3px;
         }
     }
 }
@@ -67,11 +85,12 @@ body {
 .menuList {
     list-style-type: none;
     color: @menu-font-color;
-    padding-left: 30px;
+    padding: 0;
     li {
         font-size: 18px;
         box-sizing: border-box;
         padding: 10px 2px;
+        padding-left: 35px;
         a {
             color: @menu-font-color;
             text-decoration: none;
@@ -86,10 +105,6 @@ body {
     &:hover {
         cursor: pointer;
     }
-}
-
-.menuBtn {
-    float: right;
 }
 
 .actionButtons {
@@ -114,7 +129,7 @@ body {
 #labelTitle {
     font-size: 20px;
     color: @gray-text;
-    margin-left: -8px;
+    margin-left: 30px;
 }
 
 .newCount {
@@ -139,7 +154,6 @@ body {
 }
 
 .contentContainer {
-    margin-left: @menu-width-lg;
     display: grid;
     grid-template-columns: 40% 60%;
 }
@@ -224,10 +238,6 @@ body {
     /* optional: just make scrollbar invisible */
 }
 
-::-webkit-scrollbar-thumb {
-    background: @theme-light;
-}
-
 //LOADER
 .lds-dual-ring {
     display: block;
@@ -256,9 +266,13 @@ body {
         transform: rotate(360deg);
     }
 }
+
 @media(max-width: @view-breakpoint) {
+    .mainView {
+        grid-template-columns: 0 auto;
+    }
     .menu {
-        display: none
+        display: none;
     }
     .contentContainer {
         margin-left: @menu-width-sm;

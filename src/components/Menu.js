@@ -7,7 +7,9 @@ class Menu extends React.Component {
         return (
 
             <div>
-                <div className="menu" >
+                <div className="menu" style={{
+                    display: !this.props.opened ? "none" : "block"
+                }} >
                     <div className="composeBtnContainer">
                         <button className="composeBtn">Compose</button>
                     </div>
