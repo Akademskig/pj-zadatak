@@ -38,7 +38,7 @@ body {
     z-index: 5;
     .composeBtnContainer {
         text-align: center;
-        padding-top: 35px;
+        padding-top: 45px;
         .composeBtn {
             padding: 9px 15px;
             margin: 10px;
@@ -127,15 +127,14 @@ body {
 }
 
 .backBtn {
-    background-color: inherit;
-    border: none;
+    background-color: @theme-light;
+    border: 1px solid @theme-dark;
+    border-radius: 10px;
     position: fixed;
     top: 10px;
     left: 8px;
     font-size: 15px;
-    font-weight: 600;
     color: white;
-    text-transform: uppercase;
     z-index: 10;
     &:hover {
         cursor: pointer;
@@ -145,7 +144,7 @@ body {
 #labelTitle {
     font-size: 20px;
     color: @gray-text;
-    margin-left: 30px;
+    margin-left: -9px;
 }
 
 .newCount {
