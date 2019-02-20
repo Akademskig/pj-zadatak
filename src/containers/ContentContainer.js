@@ -15,7 +15,7 @@ export class ContentContainer extends Component {
     }
     closeViewStyles = (mobile) => {
         if (!mobile)
-            return { gridTemplateColumns: "40% 60%" }
+            return { gridTemplateColumns: "33% 67%" }
         return { gridTemplateColumns: "0 100%" }
     }
 
