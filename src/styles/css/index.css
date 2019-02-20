@@ -7,14 +7,16 @@ body {
 }
 .menu {
   background-color: #282c34;
-  width: 180px;
-  position: fixed;
   top: 0;
+  width: 180px;
   bottom: 0;
+  position: fixed;
+  height: 100%;
+  z-index: 5;
 }
 .menu .composeBtnContainer {
   text-align: center;
-  margin-top: 35px;
+  padding-top: 35px;
 }
 .menu .composeBtnContainer .composeBtn {
   padding: 9px 15px;
@@ -22,32 +24,48 @@ body {
   border-radius: 25px;
   font: 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.mainView {
+  display: grid;
+  grid-template-columns: 180px auto;
+}
 .mobileMenu {
   display: none;
   background-color: #282c34;
+  height: 40px;
   width: 100%;
-  height: 50px;
   position: fixed;
   top: 0;
+  right: 0;
+  z-index: 1;
 }
-.mobileMenu .composeBtnContainer {
-  display: inline-block;
+.mobileMenu .menuBtn {
+  background-color: #282c34;
+  margin: 2px;
+  border: none;
+  float: right;
 }
-.mobileMenu .composeBtnContainer .composeBtn {
-  padding: 7px 13px;
-  margin: 8px;
-  border-radius: 23px;
-  font: 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.mobileMenu .menuBtn:hover {
+  cursor: pointer;
+}
+.mobileMenu .menuBtn:focus {
+  color: whitesmoke;
+}
+.mobileMenu .menuBtn div {
+  background-color: whitesmoke;
+  margin: 6px 0;
+  width: 30px;
+  height: 3px;
 }
 .menuList {
   list-style-type: none;
   color: white;
-  padding-left: 30px;
+  padding: 0;
 }
 .menuList li {
   font-size: 18px;
   box-sizing: border-box;
   padding: 10px 2px;
+  padding-left: 35px;
 }
 .menuList li a {
   color: white;
@@ -60,9 +78,6 @@ body {
 }
 .composeBtn:hover {
   cursor: pointer;
-}
-.menuBtn {
-  float: right;
 }
 .actionButtons {
   text-align: right;
@@ -85,7 +100,7 @@ body {
 #labelTitle {
   font-size: 20px;
   color: #727d92;
-  margin-left: -8px;
+  margin-left: 30px;
 }
 .newCount {
   color: #727d92;
@@ -107,7 +122,6 @@ body {
   background-color: #00ffb3;
 }
 .contentContainer {
-  margin-left: 180px;
   display: grid;
   grid-template-columns: 40% 60%;
 }
@@ -180,9 +194,6 @@ body {
   background: transparent;
   /* optional: just make scrollbar invisible */
 }
-::-webkit-scrollbar-thumb {
-  background: #47a5f1;
-}
 .lds-dual-ring {
   display: block;
   margin: auto;
@@ -209,6 +220,9 @@ body {
   }
 }
 @media (max-width: 895px) {
+  .mainView {
+    grid-template-columns: 0 auto;
+  }
   .menu {
     display: none;
   }
