@@ -191,6 +191,7 @@ body {
 .cardContainer {
     padding: 20px;
     border: 1px solid @shadow;
+    overflow-wrap: break-word;
     &:hover {
         background-color: @shadow;
         cursor: pointer;
@@ -199,7 +200,9 @@ body {
         display: grid;
         grid-template-columns: 60px auto;
         .cardContent {
+            height: 120px;
             padding: 10px;
+            overflow: hidden;
             .title {
                 margin: 0;
                 font-size: @font-size-cards-title;
@@ -211,7 +214,7 @@ body {
                 margin-bottom: 5px;
             }
             .body {
-                line-height: @text-line-height
+                line-height: @text-line-height;
             }
         }
         .imgContainer {
