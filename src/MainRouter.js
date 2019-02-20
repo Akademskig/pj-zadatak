@@ -47,7 +47,7 @@ class MainRouter extends React.Component {
     }
     render() {
         return (
-            <div class="mainView" style={{ gridTemplateColumns: !this.state.opened ? "0 auto" : "180px auto" }}>
+            <div className="mainView" style={{ gridTemplateColumns: !this.state.opened ? "0 auto" : "180px auto" }}>
                 <Menu toggleMenu={this.toggleMenu} opened={this.state.opened} mobile={this.state.mobile}></Menu>
                 <Switch>
                     <Route exact path="/" render={() => <Redirect to="/inbox"></Redirect>}></Route>
